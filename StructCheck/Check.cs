@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -16,10 +17,10 @@ namespace StructCheck
         private float year;
         private float hour;
         private float minute;
-        private LinkedList<Product> product;
+        private ArrayList product;
         private double price;
 
-        public Check(string namef = "АТБ", string addressf = "Пастера 45", float d = 20, float m = 10, float y = 2022, float h = 11, float mi = 43, double pric = 0, LinkedList<Product> p = null)
+        public Check(string namef = "АТБ", string addressf = "Пастера 45", float d = 20, float m = 10, float y = 2022, float h = 11, float mi = 43, double pric = 0, ArrayList p = null)
         {
             namefirm = namef;
             addresfirm = addressf;
@@ -46,18 +47,18 @@ namespace StructCheck
 
         public float Minute { get { return minute; } set { minute = value; } }
 
-        public LinkedList<Product> Product { set { product = value; } }
+        public ArrayList Product { set { product = value; } }
 
         public double Price { get { return price; } set { price = value; } }
 
         public void AddProduct(Product p)
         {
-            product.AddLast(p);
+            product.Add(p);
         }
 
         private void CountPrice()
         {
-            foreach (var item in product)
+            foreach (Product item in product)
             {
                price += item.PriceCalculation();
             }
@@ -68,8 +69,8 @@ namespace StructCheck
             CountPrice();
             Console.WriteLine("\t\t " + namefirm);
             Console.WriteLine("\t\t " + addresfirm);
-            Console.WriteLine("\t\t Датта: " + day +"." + month +"." + year + "  " + hour + ":" + minute);
-            foreach (var item in product)
+            Console.WriteLine("\t\t Дата: " + day +"." + month +"." + year + "  " + hour + ":" + minute);
+            foreach (Product item in product)
             {
                 Console.Write("\t\t ");
                 item.Print();
