@@ -20,7 +20,7 @@ namespace StructCheck
             this.cost = c;
             this.count = coun;
             this.discount = d;
-            PriceCalculation();
+            this.PriceCalculation();
         }
 
         public double PriceCalculation()

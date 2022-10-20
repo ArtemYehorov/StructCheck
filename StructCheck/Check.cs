@@ -53,7 +53,7 @@ namespace StructCheck
 
         public void AddProduct(Product p)
         {
-            product.Add(p);
+            this.product.Add(p);
         }
 
         private void CountPrice()
