@@ -16,16 +16,16 @@ namespace StructCheck
 
         public Product(string n = "Пиво Оболонь Светлое", double c = 27, float coun = 2, double d = 10)
         {
-            name = n;
-            cost = c;
-            count = coun;
-            discount = d;
+            this.name = n;
+            this.cost = c;
+            this.count = coun;
+            this.discount = d;
             PriceCalculation();
         }
 
         public double PriceCalculation()
         {
-            return cost = count * (cost - ((cost * discount) / 100));
+            return this.cost = count * (cost - ((cost * discount) / 100));
         }
             
         public void Print()

@@ -22,15 +22,15 @@ namespace StructCheck
 
         public Check(string namef = "АТБ", string addressf = "Пастера 45", float d = 20, float m = 10, float y = 2022, float h = 11, float mi = 43, double pric = 0, ArrayList p = null)
         {
-            namefirm = namef;
-            addresfirm = addressf;
-            day = d;
-            month = m;
-            year = y;
-            hour = h;
-            minute = mi;
-            price = pric;
-            product = p;
+            this.namefirm = namef;
+            this.addresfirm = addressf;
+            this.day = d;
+            this.month = m;
+            this.year = y;
+            this.hour = h;
+            this.minute = mi;
+            this.price = pric;
+            this.product = p;
         }
 
         public string NameFirm { get { return namefirm; } set { namefirm = value; } }
@@ -60,7 +60,7 @@ namespace StructCheck
         {
             foreach (Product item in product)
             {
-               price += item.PriceCalculation();
+                this.price += item.PriceCalculation();
             }
         }
 
